@@ -7,6 +7,8 @@ Created on Mon Apr  6 10:17:09 2020
 import numpy as np
 import matplotlib.pyplot as plt
 
+#function to generate points to graph
+#finds the integral of the virus_dirivate
 def rk4(func, x0, y0, xN, N, args=()):
     h = (xN-x0)/N
     t = np.linspace(x0, xN, N+1)
@@ -19,6 +21,8 @@ def rk4(func, x0, y0, xN, N, args=()):
         k4 = func(Y[n]+k3*h, *args)
         Y[n+1]=Y[n] + h*(k1+2*k2+2*k3+k4)/6
     return t,Y
+
+#finds how the infection and susceptible populations are chaging at a certain point
 def virus_dirivitive(y,b,a):
     i=y[0]
     s=y[1]
