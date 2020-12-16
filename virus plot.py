@@ -31,14 +31,18 @@ def virus_dirivitive(y,b,a):
     dr=a*i
     return np.array([di,ds,dr])
     
-    
+#i0=initial infected population
 i0=(8.2*10)**(-4)
+
+#s0=initial susceptible population
 s0=1-i0
 r0=0
 y0=np.array([i0,s0,r0])
 t0=0
 tN=1000
 N=100000
+
+#b_a=(β=.214,γ=1/14)
 b_a=(.214,.0714)
 
 #plot1
